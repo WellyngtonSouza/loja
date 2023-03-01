@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+header{
+    background-color: aquamarine;
+}
+
+.menu{
+    background-color: rgb(255, 237, 237);
+    max-width: 1200px;
+    height: 8rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu .logo {
+    height: 80%;
+}
+
+.menu .logo img{
+    height: 100%;
+}
+
+.menu .marca {
+  width: 500px;
+  height: 50px;
+  border-radius: 50% 50% 0 0;
+  background-color: white;
+  border:2px solid pink;
+}
+
+.menu .marca h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    color: #f3759f;
+}
+.redes_sociais ul{
+    display: flex;
+    align-items: center;
+    list-style-type:none;
+    justify-content: space-around;
+    width: 14rem;
+}
+
+.rs-1 , .rs-2 , .rs-3{
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    transition:transform 0.9s ease , color 0.5s ease;
+}
+
+.rs-1:hover{
+    transform:translateY(-10px);
+    color:#E1306C;
+}
+
+.rs-2:hover{
+    transform:translateY(-10px);
+    color:#25D366;
+}
+
+.rs-3:hover{
+    transform:translateY(-10px);
+    color:#0e76a8;
+}
+
+.redes_sociais ul li a:hover{
+
+}
+.categorias{
+    background-color: brown;
+}
