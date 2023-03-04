@@ -46,25 +46,33 @@ let categorias = [
     {
         marca: "Avon",
         sub_categorias: ["perfumes", "hidradantes", "maquiagem", "kids"],
-        imagens: ["tal", "tal", "tal", "tal"],
+        imagens: [
+            ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"]
+        ],
         precos: ["valor", 'valor', "valor", "valor"],
     },
     {
         marca: "Natura",
         sub_categorias: ["perfumes", "hidradantes", "maquiagem", "kids"],
-        imagens: ["tal", "tal", "tal", "tal"],
+        imagens: [
+            ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"]
+        ],
         precos: ["valor", 'valor', "valor", "valor"],
     },
     {
         marca: "Boticario",
         sub_categorias: ["perfumes", "hidradantes", "maquiagem", "kids"],
-        imagens: ["tal", "tal", "tal", "tal"],
+        imagens: [
+            ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"]
+        ],
         precos: ["valor", 'valor', "valor", "valor"],
     },
     {
         marca: "Romance",
         sub_categorias: ["calcinhas", "sutiãs", "calças", "calças legins"],
-        imagens: ["tal", "tal", "tal", "tal"],
+        imagens: [
+            ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"]
+        ],
         precos: ["valor", 'valor', "valor", "valor"],
     },
 ]
@@ -77,47 +85,37 @@ let selected = document.querySelector(".titulo select")
 let categorias_produtos = document.querySelectorAll(".titulo_produtos > ul > button")
 let fotos = document.querySelectorAll(".cards_produtos > ul > li > img")
 let sumario_produtos = document.querySelectorAll(".cards_produtos > ul > li > div > h2 > span")
-console.log(fotos)
 selected.addEventListener("change", function (element) {
     let option = element.target.value
 
 
-    for (let index = 0; index < categorias_produtos.length; index++){
+    for (let index = 0; index < categorias_produtos.length; index++) {
         if (option == categorias[index].marca) {
-            console.log(index)
-            for(let dis = 0; dis < categorias_produtos.length; dis++){
+            for (let dis = 0; dis < categorias_produtos.length; dis++) {
                 categorias_produtos[dis].innerHTML = categorias[index].sub_categorias[dis]
             }
         }
     }
 
-    // if (option == categorias[0].marca) {
-    //     console.log("avon")
-    //     for (let index = 0; index < categorias_produtos.length; index++) {
-
-    //         categorias_produtos[index].innerHTML = categorias[0].sub_categorias[index]
-    //     }
-    // }
-    // else if (option == categorias[1].marca) {
-    //     for (let index = 0; index < categorias_produtos.length; index++) {
-    //         categorias_produtos[index].innerHTML = categorias[1].sub_categorias[index]
-    //     }
-    // }
-    // else if (option == categorias[2].marca) {
-    //     for (let index = 0; index < categorias_produtos.length; index++) {
-    //         categorias_produtos[index].innerHTML = categorias[2].sub_categorias[index]
-    //     }
-    // }
-    // else if (option == categorias[3].marca) {
-    //     for (let index = 0; index < categorias_produtos.length; index++) {
-    //         categorias_produtos[index].innerHTML = categorias[3].sub_categorias[index]
-    //     }
-    // }
-
-
 })
 
+categorias_produtos.forEach((element) => {
+    element.addEventListener("click", function () {
+        
+        categorias_produtos.forEach(elements=>elements.dataset.clickin = false)
 
+        let controle = this.dataset.clickin
+        this.dataset.clickin = !!controle
 
+        categorias_produtos.forEach((elements)=>{
 
-console.log(categorias)
+            if(elements.dataset.clickin == "true"){
+                elements.style.backgroundColor = "rgba(255,255,255, 0.1)"
+            }
+            else{
+                elements.style.backgroundColor = "rgba(255,255,255, 1)"
+            }
+        })
+        
+    })
+})
