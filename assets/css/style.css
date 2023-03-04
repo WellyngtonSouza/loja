@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
 *{
     padding:0;
@@ -8,14 +9,20 @@
 
 :root{
     font-size: 62.5%;
+    user-select: none;
 }
 
 body{
     font-size: 1.5rem;
+    position: relative;
 }
 
 header{
-    background-color: aquamarine;
+    background-color: rgb(255, 237, 237);
+    position: fixed;
+    width:100%;
+    margin: auto;
+    z-index: 1;
 }
 
 .menu{
@@ -80,9 +87,227 @@ header{
     color:#0e76a8;
 }
 
-.redes_sociais ul li a:hover{
+.categorias{
+    background-color: #E1306C;
+    display: flex;
+    justify-content: center;
+}
+
+.categorias > ul {
+    display: flex;
+    height: 8rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+}
+
+.categorias > ul > li{
+    cursor: pointer ;
+    position: relative;
+}
+
+.categorias > ul > li > p > span{
+    color: #ffffff;
+    font-size: 2rem;
+    font-family: 'Tilt Neon', cursive;
+}
+
+.categorias > ul > li > p > i{
+    color: #FFFFFF;
+    transition: transform 0.2s ease;
+    padding: 0 2rem;
+}
+
+.sub_menu{
+    list-style-type:none;
+    background-color: rgba(255, 20, 147, 0.2);
+    border: 0.1rem solid rgba(255, 20, 147, 0.9);
+    border-radius: 0.5rem;
+    position: absolute;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    top: 6rem;
+
+    transition:opacity 0.5s ease;
 
 }
-.categorias{
-    background-color: brown;
+
+.sub_menu > li{
+    width: 15rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    border-bottom: 0.1rem solid rgba(255, 20, 147, 0.9);
+    font-family: 'Tilt Neon', cursive;
+
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/Wave.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+
+}
+
+.home .container{
+    height: fit-content;
+    display: flex;
+    max-width: 120rem;
+    margin: auto ;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    
+}
+
+.sobre {
+    position: relative;
+}
+
+.sobre > h3 {
+    font-size: 2em;
+    font-family: 'Pacifico', cursive;
+    color: rgba(255, 20, 147, 0.9);
+}
+
+.sobre > h1 {
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.7em;
+    max-width: 50rem;
+    
+}
+
+.sobre > button{
+    padding: 2rem 7rem;
+    background-color:rgba(255, 20, 147, 0.6) ;
+    color: white;
+    font-size: 2rem;
+    border-radius: 2rem;
+    border: 0.2rem solid rgba(255, 20, 147, 1);
+    margin-top: 8rem;
+    cursor: pointer;
+    box-shadow: 0 0 1rem 0.4rem white;
+}
+.image_sobre{
+    width: 50rem;
+    height: 50rem;
+    position: relative;
+}
+.image_sobre img{
+    height: 100%;
+}
+
+
+.produtos{
+    background-color: #eeeaea;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.container_produtos{
+    max-width: 120rem;
+    height: 71%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 5rem;
+
+}
+
+.titulo{
+    
+}
+
+.titulo select{
+    background-color: #ffffff;
+    width: fit-content;
+    padding: 2rem 5rem;
+    border-radius: 10rem;
+    box-shadow: 0 0 0.7rem 0.01rem  black;
+    margin: 5rem 0 4rem 4rem;
+}
+
+.secao_produtos {
+    width: 100%;
+    border-radius: 0 0 1rem 10rem ;
+}
+
+.secao_produtos ul{
+    list-style-type:none;
+    display: flex;
+}
+
+.titulo_produtos{
+}
+
+.titulo_produtos > ul{
+    justify-content: space-around;
+}
+
+.titulo_produtos button{
+    margin: 2rem;
+    width: 15rem;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 0.7rem 0.01rem  black;
+    border-radius: 5rem;
+    cursor: pointer;
+    border: none;
+}
+
+.cards_produtos{
+    height: 50rem;
+    padding: 0 3rem;
+
+}
+.cards_produtos ul{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+.cards_produtos li{
+    width: 30rem;
+    height: fit-content;
+    background-color: grey;
+    border-radius: 5rem;
+    margin: 0 2rem 0 2rem;
+    text-align: center;
+}
+
+.cards_produtos > ul > li > img{
+    width: 20rem;
+    height: 20rem;
+    background-color: aqua;
+    margin: 5rem;
+    border-radius: 5rem;
+}
+
+.cards_produtos > ul > li > div{
+
+    text-align: start;
+    margin: 0 auto 6rem auto;
+    width: 20rem;
+    height: 7rem;
 }
