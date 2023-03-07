@@ -12,26 +12,26 @@ sub_menus.forEach(function (menus) {
 
             if (!isExpanded) {
                 setTimeout(() => {
-                    
                     sub_menu.style.visibility = "visible"
                     icon.style.transform = "rotate(180deg)"
                     resolve()
                 }, 100)
             }else{
+
                 sub_menu.style.opacity = "0"
-                
+                icon.style.transform = "rotate(0deg)"
                 setTimeout(() => {
-                    icon.style.transform = "rotate(0deg)"
+
                     reject()
-                }, 500)
-                
+                }, 100)
             }
         })
+
         promise.then(() => {
             sub_menu.style.opacity = "1"
         }).catch(() => {
             sub_menu.style.visibility = "hidden"
-            
+
         })
         sub_menu.dataset.show = !isExpanded;
     })
@@ -42,7 +42,7 @@ let categorias = [
         marca: "avon",
         sub_categorias: ["perfumes", "hidradantes", "maquiagem", "kids"],
         imagens: [
-            ["p01.jpg", "p02.jpg", "p03.jpg", "p04.jpg"], ["hidratantes1", "hidratantes2", "hidratantes3", "hidratantes4"], ["maquiagem1", "maquiagem2", "maquiagem3", "maquiagem4"], ["kids1", "kids2", "kids3", "kids4"]
+            ["p01.jpg", "p02.jpg", "p03.jpg", "p04.jpg"], ["avonH", "avonH", "avonH", "avonH"], ["avonM", "avonM", "avonM", "avonM"], ["avonK", "avonK", "avonK", "kids4"]
         ],
         precos: ["valor", 'valor', "valor", "valor"],
     },
@@ -72,6 +72,9 @@ let categorias = [
     },
 ]
 
+
+
+
 let selected = document.querySelector(".titulo select")
 
 let categorias_produtos = document.querySelectorAll(".titulo_produtos > ul > button")
@@ -81,17 +84,38 @@ let fotos = document.querySelectorAll(".cards_produtos > ul > li > img")
 let sumario_produtos = document.querySelectorAll(".cards_produtos > ul > li > div > h2 > span")
 selected.addEventListener("change", function (element) {
     let option = element.target.value
-
     
+    
+
     for (let index = 0; index < categorias_produtos.length; index++) {
         if (option == categorias[index].marca) {
             for (let dis = 0; dis < categorias_produtos.length; dis++) {
                 categorias_produtos[dis].innerHTML = categorias[index].sub_categorias[dis]
+                categorias_produtos[dis].value = categorias[index].sub_categorias[dis]
             }
         }
     }
+    let ind;
+    let indValue; 
+    categorias_produtos.forEach((element, index) => {
+        if (element.classList.contains("ativos")) {
+            ind = index
+            indValue = element.value
+        }
+    })
 
+    for (let index = 0; index < categorias_produtos.length; index++) {
+        if (categorias[index].marca == option && categorias[index].sub_categorias[ind] == indValue) {
+            
+            for (let dis = 0; dis < categorias[index].imagens.length; dis++) {
+                fotos[dis].src = `./assets/img/listFotos/${option}/${indValue}/${categorias[index].imagens[ind][dis]}`
+            }
+        }
+    }
+    
 })
+
+
 
 categorias_produtos.forEach((element, ind) => {
     element.addEventListener("click", function () {
@@ -102,16 +126,16 @@ categorias_produtos.forEach((element, ind) => {
         let exist = this.classList.contains("ativos")
         let option = selected.value
         if (exist) {
-            
+
         }
 
-        
+
         for (let index = 0; index < categorias_produtos.length; index++) {
-                if (categorias[index].marca == option && categorias[index].sub_categorias[ind] == this.value ) {
-                    for (let dis = 0; dis < categorias[index].imagens.length; dis++) {
-                        fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${categorias[index].imagens[ind][dis]}`
-                    }
+            if (categorias[index].marca == option && categorias[index].sub_categorias[ind] == this.value) {
+                for (let dis = 0; dis < categorias[index].imagens.length; dis++) {
+                    fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${categorias[index].imagens[ind][dis]}`
                 }
             }
+        }
     })
 })
