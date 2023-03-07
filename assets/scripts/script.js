@@ -1,5 +1,5 @@
 "use strict"
-
+//produtos
 let produto = [
     {
         marca: "avon",
@@ -87,30 +87,30 @@ let fotos = document.querySelectorAll(".cards_produtos > ul > li > img")
 selected.addEventListener("change", function (element) {
     
     let option = element.target.value
-    let indexProduto = produto.findIndex(el=>el.marca == option)
+    let indexProduto = produto.findIndex(el=>el.marca == option)   // sempre pego o index atual da  marca selecionada
 
     for (let dis = 0; dis < categorias_produtos.length; dis++) {
-        categorias_produtos[dis].innerHTML = produto[indexProduto].sub_categorias[dis]
+        categorias_produtos[dis].innerHTML = produto[indexProduto].sub_categorias[dis] // esse bloco muda os valores e o conteúdo dependendo da marca
         categorias_produtos[dis].value = produto[indexProduto].sub_categorias[dis]
     }
-    let ind = Array.from(categorias_produtos).findIndex(el=>el.classList.contains("ativos"))
-    let indValue = categorias_produtos[ind].value
+    let ind = Array.from(categorias_produtos).findIndex(el=>el.classList.contains("ativos")) // aqui irá pegar o index da categoria marcada como ativa
+    let indValue = categorias_produtos[ind].value                                            // aqui pego o valor da categoria selecionada pelo index
     
     for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
-        fotos[dis].src = `./assets/img/listFotos/${option}/${indValue}/${produto[indexProduto].imagens[ind][dis]}`
+        // eu coloquei os nomes das pastas de acordo os valores pra eu manipular por aqui, pois os nomes das imagens estaoria no objeto produto assim consigo controlar com facilidade
+        fotos[dis].src = `./assets/img/listFotos/${option}/${indValue}/${produto[indexProduto].imagens[ind][dis]}` // aqui eu distribuo as imagens dependendo onde a categoria estiver selecionada pelos index que definir acima
     }
 })
 
-
 categorias_produtos.forEach((element, ind) => {
     element.addEventListener("click", function () {
-        categorias_produtos.forEach(elements => elements.classList.remove("ativos"))
+        categorias_produtos.forEach(elements => elements.classList.remove("ativos")) // aqui removo todos os botões ativos, pra sempre ter um ativo
 
-        this.classList.add("ativos")
+        this.classList.add("ativos") //e aqui adiciono apenas um
         let option = selected.value
 
         let indexProduto = produto.findIndex(el=>el.marca == option)
-        if (produto[indexProduto].marca == option) {
+        if (produto[indexProduto].marca == option) {                                // aqui eu irei pegar as marca e categoria atual e adicionar a imagen de acordo com os index de marca e categoria
             for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
                 fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${produto[indexProduto].imagens[ind][dis]}`
             }
