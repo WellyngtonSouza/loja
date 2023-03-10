@@ -5,114 +5,130 @@ let produto = [
         marca: "avon",
         sub_categorias: ["perfumes", "hidradantes", "maquiagem", "kids"],
         imagens: [
-            ["p01.jpg", "p02.jpg", "p03.jpg", "p04.jpg"], ["avonH", "avonH", "avonH", "avonH"], ["avonM", "avonM", "avonM", "avonM"], ["avonK", "avonK", "avonK", "avonK"]
+            ["p01.jpg", "p02.jpg", "p03.jpg", "p04.jpg"],
+            ["avonH", "avonH", "avonH", "avonH"],
+            ["avonM", "avonM", "avonM", "avonM"],
+            ["avonK", "avonK", "avonK", "avonK"]
         ],
         precos: ["valor", 'valor', "valor", "valor"],
+        descricao: ["avon1", "avon2", "avon3", "avon4"],
+        nome: [
+            ["avonP", "avonP", "avonP", "avonP"],
+            ["avonH", "avonH", "avonH", "avonH"],
+            ["avonM", "avonM", "avonM", "avonM"],
+            ["avonK", "avonK", "avonK", "avonK"],
+        ],
+        catalogo : "",
+
     },
     {
         marca: "natura",
         sub_categorias: ["perfumes", "hidradantes", "maquiagem", "kids"],
         imagens: [
-            ["naturaP", "naturaP", "naturaP", "naturaP"], ["naturaH", "naturaH", "naturaH", "naturaH"], ["naturaM", "naturaM", "naturaM", "naturaM"], ["naturaK", "naturaK", "naturaK", "naturaK"]
+            ["naturaP", "naturaP", "naturaP", "naturaP"],
+            ["naturaH", "naturaH", "naturaH", "naturaH"],
+            ["naturaM", "naturaM", "naturaM", "naturaM"],
+            ["naturaK", "naturaK", "naturaK", "naturaK"]
         ],
         precos: ["valor", 'valor', "valor", "valor"],
+        descricao: ["natura1", "natura2", "natura3", "natura4"],
+        nome: [
+            ["naturaP", "naturaP", "naturaP", "naturaP"],
+            ["naturaH", "naturaH", "naturaH", "naturaH"],
+            ["naturaM", "naturaM", "naturaM", "naturaM"],
+            ["naturaK", "naturaK", "naturaK", "naturaK"],
+        ],
+        catalogo : "",
     },
     {
         marca: "boticario",
         sub_categorias: ["perfumes", "hidradantes", "maquiagem", "kids"],
         imagens: [
-            ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"]
+            ["boticarioP", "boticarioP", "boticarioP", "boticarioP"],
+            ["boticarioH", "boticarioH", "boticarioH", "boticarioH"],
+            ["boticarioM", "boticarioM", "boticarioM", "boticarioM"],
+            ["boticarioK", "boticarioK", "boticarioK", "boticarioK"]
         ],
         precos: ["valor", 'valor', "valor", "valor"],
+        descricao: ["boticario1", "boticario2", "boticario3", "boticario4"],
+        nome: [
+            ["boticarioP", "boticarioP", "boticarioP", "boticarioP"],
+            ["boticarioH", "boticarioH", "boticarioH", "boticarioH"],
+            ["boticarioM", "boticarioM", "boticarioM", "boticarioM"],
+            ["boticarioK", "boticarioK", "boticarioK", "boticarioK"],
+        ],
+        catalogo : "",
     },
     {
         marca: "romance",
         sub_categorias: ["calcinhas", "sutiãs", "calças", "calças legins"],
         imagens: [
-            ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"], ["tal", "tal", "tal", "tal"]
+            ["romanceC", "romanceC", "romanceC", "romanceC"],
+            ["romanceS", "romanceS", "romanceS", "romanceS"],
+            ["romanceCL", "romanceCL", "romanceCL", "romanceCL"],
+            ["romanceCLG", "romanceCLG", "romanceCLG", "romanceCLG"]
         ],
         precos: ["valor", 'valor', "valor", "valor"],
+        descricao: ["romance1", "romance2", "romance3", "romance4"],
+        nome: [
+            ["romanceC", "romanceC", "romanceC", "romanceC"],
+            ["romanceS", "romanceS", "romanceS", "romanceS"],
+            ["romanceCL", "romanceCL", "romanceCL", "romanceCL"],
+            ["romanceCLG", "romanceCLG", "romanceCLG", "romanceCLG"],
+        ],
+        catalogo : "",
     },
 ]
 
+let selected = document.querySelector(".main-promocoes-selection select")
 
-// animação quando sumir ou aparecer o sub menu!!
+let categorias_produtos = document.querySelectorAll(".promocoes-header-produtos > ul > button")
+let sumario_produtos = document.querySelectorAll(".promocoes-cards-produtos > ul > li > div > h2 > span")
+let fotos = document.querySelectorAll(".promocoes-cards-produtos > ul > li > img")
+let nome_produto = document.querySelectorAll(".promocoes-cards-produtos > ul > li > div > h2 >  span")
+let angleOn = document.querySelector(".angleOn")
+selected.addEventListener("click", () => angleOn.classList.toggle("on"))
+selected.addEventListener("blur", () => angleOn.classList.contains("on") ? angleOn.classList.toggle("on") : null)
 
-// a promise tem a função de apenas esconder ou aparecer a visibilidade, 
-//pois se o usuário fazer vários clicks rápidos, irá bugar, e decidir usar
-// o visibility pois, se usasse só o opacity ele ainda iria ocupar o espaço e podia ter iteratividade do usuário sem querer
 
-let sub_menus = document.querySelectorAll(".categorias > ul > li")
+let containerScroll = document.querySelector(".promocoes-cards-produtos ul")
+let buttonRight = document.querySelector(".an-1")
+let buttonLeft = document.querySelector(".an-2")
 
-sub_menus.forEach(function (menus) {
-    menus.addEventListener("click", function () {
-        let sub_menu = this.querySelector(".sub_menu");
-        let icon = this.querySelector("p > i")
+buttonRight.addEventListener("click", () => containerScroll.scrollLeft = containerScroll.scrollWidth / 2)
+buttonLeft.addEventListener("click", () => containerScroll.scrollLeft = -(containerScroll.scrollWidth / 2))
 
-        let isExpanded = sub_menu.dataset.show === "true";
-        let promise = new Promise((resolve, reject) => {
 
-            if (!isExpanded) {
-                setTimeout(() => {
-                    sub_menu.style.visibility = "visible"
-                    icon.style.transform = "rotate(180deg)"
-                    resolve()
-                }, 100)
-            } else {
-
-                sub_menu.style.opacity = "0"
-                icon.style.transform = "rotate(0deg)"
-                setTimeout(() => {
-
-                    reject()
-                }, 100)
-            }
-        })
-
-        promise.then(() => {
-            sub_menu.style.opacity = "1"
-        }).catch(() => {
-            sub_menu.style.visibility = "hidden"
-
-        })
-        sub_menu.dataset.show = !isExpanded;
-    })
-})
-
-let selected = document.querySelector(".titulo select")
-
-let categorias_produtos = document.querySelectorAll(".titulo_produtos > ul > button")
-let sumario_produtos = document.querySelectorAll(".cards_produtos > ul > li > div > h2 > span")
-let fotos = document.querySelectorAll(".cards_produtos > ul > li > img")
 selected.addEventListener("change", function (element) {
-    
+
     let option = element.target.value
-    let indexProduto = produto.findIndex(el=>el.marca == option)   // sempre pego o index atual da  marca selecionada
+    let indexProduto = produto.findIndex(el => el.marca == option)   // sempre pego o index atual da  marca selecionada
 
     for (let dis = 0; dis < categorias_produtos.length; dis++) {
         categorias_produtos[dis].innerHTML = produto[indexProduto].sub_categorias[dis] // esse bloco muda os valores e o conteúdo dependendo da marca
         categorias_produtos[dis].value = produto[indexProduto].sub_categorias[dis]
     }
-    let ind = Array.from(categorias_produtos).findIndex(el=>el.classList.contains("ativos")) // aqui irá pegar o index da categoria marcada como ativa
+    let ind = Array.from(categorias_produtos).findIndex(el => el.classList.contains("ativos")) // aqui irá pegar o index da categoria marcada como ativa
     let indValue = categorias_produtos[ind].value                                            // aqui pego o valor da categoria selecionada pelo index
-    
+
     for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
         // eu coloquei os nomes das pastas de acordo os valores pra eu manipular por aqui, pois os nomes das imagens estaoria no objeto produto assim consigo controlar com facilidade
         fotos[dis].src = `./assets/img/listFotos/${option}/${indValue}/${produto[indexProduto].imagens[ind][dis]}` // aqui eu distribuo as imagens dependendo onde a categoria estiver selecionada pelos index que definir acima
+        nome_produto[dis].innerHTML = produto[indexProduto].nome[ind][dis]
     }
 })
 
-categorias_produtos.forEach((element, ind) => {
+categorias_produtos.forEach((element, index) => {
     element.addEventListener("click", function () {
         categorias_produtos.forEach(elements => elements.classList.remove("ativos")) // aqui removo todos os botões ativos, pra sempre ter um ativo
 
         this.classList.add("ativos") //e aqui adiciono apenas um
         let option = selected.value
-
-        let indexProduto = produto.findIndex(el=>el.marca == option)
+        let indexProduto = produto.findIndex(el => el.marca == option)
         if (produto[indexProduto].marca == option) {                                // aqui eu irei pegar as marca e categoria atual e adicionar a imagen de acordo com os index de marca e categoria
             for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
-                fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${produto[indexProduto].imagens[ind][dis]}`
+                fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${produto[indexProduto].imagens[index][dis]}`
+                nome_produto[dis].innerHTML = produto[indexProduto].nome[index][dis]
             }
         }
     })

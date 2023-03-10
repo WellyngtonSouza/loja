@@ -14,89 +14,63 @@
     <!-- icon : sacola : <i class="fa-regular fa-bag-shopping"></i> -->
 
     <header>
-        <nav class="menu">
-            <div class="logo">
+        <nav class="main-menu">
+            <div class="menu-logo">
                 <img src="./assets/img/bolsa-de-compras.png" alt="">
             </div>
-            <divc class="marca">
+            <div class="logo-texto">
                 <h1>Casa das sacolas</h1>
-            </divc>
-            <div class="redes_sociais">
+            </div>
+            <div class="redes-sociais">
                 <ul>
-                    <li><a href="" class="rs-1"><i class="rs-1 fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://wa.me/5591980310565" target="_blank" class="rs-2"><i class="rs-2 fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href="" class="rs-3"><i class="rs-3 fa-brands fa-linkedin"></i></a></li>
+                    <li><a href=""><i class="instagram-icon fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://wa.me/5591980310565" target="_blank"><i class="whatsapp-icon fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href=""><i class="linkedin-icon fa-brands fa-linkedin"></i></a></li>
                 </ul>
             </div>
         </nav>
-        <nav class="categorias">
+        <nav class="main-menu-categorias">
             <ul>
-                <li>
-                    <p><span>Avon</span><i class="fa-solid fa-angle-down"></i></p>
-                    <ul class="sub_menu avon">
-                        <li>Perfumes</li>
-                        <li>Hidradantes</li>
-                        <li>Maquiagem</li>
-                        <li>Kids</li>
-                    </ul>
-                </li>
-                <li>
-                    <p><span>Natura</span><i class="fa-solid fa-angle-down"></i></p>
-                    <ul class="sub_menu natura">
-                        <li>Perfumes</li>
-                        <li>Hidradantes</li>
-                        <li>Maquiagem</li>
-                        <li>Kids</li>
-                    </ul>
-                </li>
-                <li>
-                    <p><span>Boticário</span><i class="fa-solid fa-angle-down"></i></p>
-                    <ul class="sub_menu boticario">
-                        <li>Perfumes</li>
-                        <li>Hidradantes</li>
-                        <li>Maquiagem</li>
-                        <li>Kids</li>
-                    </ul>
-                </li>
-                <li>
-                    <p><span>Romance</span><i class="fa-solid fa-angle-down"></i></p>
-                    <ul class="sub_menu romance">
-                        <li>Calcinhas</li>
-                        <li>sutiãs</li>
-                        <li>calças</li>
-                        <li>calças legins</li>
-                    </ul>
-                </li>
+                <li>Home</li>
+                <li>Promoçoes</li>
+                <li>Produtos</li>
+                <li>contato</li>
             </ul>
         </nav>
     </header>
 
     <section class="home">
-        <div class="container">
-            <div class="sobre">
+        <div class="main-home">
+            <div class="home-sobre">
                 <h3>Casa das sacolas</h3>
                 <h1>Cosméticos e Variedades em Geral</h1>
                 <button>Saiba mais</button>
             </div>
 
-            <div class="image_sobre">
+            <div class="home-image-sobre">
                 <img src="./assets/img/—Pngtree—cartoon beauty makeup posters vector_868270.png" alt="">
             </div>
         </div>
     </section>
 
-    <section class="produtos">
-        <div class="container_produtos">
-            <div class="titulo">
+    <section class="promocoes">
+        <div class="main-promocoes">
+            
+            <button class="angle an-1"><i class="fa-solid fa-angles-right"></i></button>
+            <button class="angle an-2"><i class="fa-solid fa-angles-right"></i></button>
+
+            <div class="main-promocoes-selection">
                 <select name="" id="">
                     <option selected value="avon">Avon</option>
                     <option value="natura">Natura</option>
                     <option value="boticario">Boticário</option>
                     <option value="romance">Romance</option>
                 </select>
+
+                <i class="fa-solid fa-angle-down angleOn"></i>
             </div>
-            <div class="secao_produtos">
-                <div class="titulo_produtos">
+            <div class="secao-promocoes-produtos">
+                <div class="promocoes-header-produtos">
                     <ul>
                         <button value="perfumes" class="ativos">Perfumes</button>
                         <button value="hidradantes">Hidradantes</button>
@@ -104,7 +78,7 @@
                         <button value="kids">kids</button>
                     </ul>
                 </div>
-                <div class="cards_produtos">
+                <div class="promocoes-cards-produtos">
                     <ul>
                         <li>
                             <img src="./assets/img/listFotos/avon/perfumes/p01.jpg" alt="">
@@ -124,10 +98,7 @@
                             <img src="./assets/img/listFotos/avon/perfumes/p03.jpg" alt="">
                             <div>
                                 <h2><i class="fa-solid fa-spray-can-sparkles"></i><span>lilly</span></h2>
-                                <p>Glamour</p>
-                                <p>adocicado floral</p>
-                                <p>Deo parfum 50 ml</p>
-                                <h4>R$ 94,90</h4>
+                                <p></p>
                             </div>
                         </li>
                         <li>
@@ -137,9 +108,117 @@
                                 <p></p>
                             </div>
                         </li>
+
+                        <li>
+                            basdvasdv
+                        </li>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="secao-produtos">
+        <div class="main-produtos">
+            <div class="produtos-header">
+                <h1>Produtos</h1>
+                <p>Variedades em geral</p>
+            </div>
+
+            <div class="main-produtos-categorias">
+                <div class="produtos-categorias">
+                    <h1>Cosméticos e Roupas de marcas</h1>
+                    <div class="produtos-imagens-cards">
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                            
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="produtos-categorias">
+                    <h1>Remédios Medicinais</h1>
+                    <div class="produtos-imagens-cards">
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="produtos-categorias">
+                    <h1>Descartáveis</h1>
+                    <div class="produtos-imagens-cards">
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+
+                        <div class="produtos-cards">
+                            <img class="produtos-img" src="./assets/img/frasco-de-perfume-de-vista-frontal-no-fundo-desfocado-biege.jpg" alt="">
+                            <p class="preco-produtos">R$99,99</p>
+                            <a href="" class="btn-link-produtos">Tenho interesse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contato">
+        
     </section>
 
 </body>
