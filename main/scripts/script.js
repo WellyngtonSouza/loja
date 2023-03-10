@@ -113,7 +113,7 @@ selected.addEventListener("change", function (element) {
 
     for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
         // eu coloquei os nomes das pastas de acordo os valores pra eu manipular por aqui, pois os nomes das imagens estaoria no objeto produto assim consigo controlar com facilidade
-        fotos[dis].src = `./assets/img/listFotos/${option}/${indValue}/${produto[indexProduto].imagens[ind][dis]}` // aqui eu distribuo as imagens dependendo onde a categoria estiver selecionada pelos index que definir acima
+        fotos[dis].src = `./main/img/listFotos/${option}/${indValue}/${produto[indexProduto].imagens[ind][dis]}` // aqui eu distribuo as imagens dependendo onde a categoria estiver selecionada pelos index que definir acima
         nome_produto[dis].innerHTML = produto[indexProduto].nome[ind][dis]
     }
 })
@@ -127,7 +127,7 @@ categorias_produtos.forEach((element, index) => {
         let indexProduto = produto.findIndex(el => el.marca == option)
         if (produto[indexProduto].marca == option) {                                // aqui eu irei pegar as marca e categoria atual e adicionar a imagen de acordo com os index de marca e categoria
             for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
-                fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${produto[indexProduto].imagens[index][dis]}`
+                fotos[dis].src = `./main/img/listFotos/${option}/${this.value}/${produto[indexProduto].imagens[index][dis]}`
                 nome_produto[dis].innerHTML = produto[indexProduto].nome[index][dis]
             }
         }
