@@ -12,36 +12,34 @@
 :root{
     font-size: 62.5%;
     user-select: none;
-}
-
+} 
 
 body{
     font-size: 1.5rem;
-    position: relative;
 }
 
 /* cabeçalho/menu */
 
 header{
-    background-color: rgb(255, 237, 237);
     position: fixed;
-    width:100%;
-    margin: auto;
+    width:100vw;
     z-index: 1;
+    background-color: #ffffff;
 }
 
 .main-menu{
-    background-color: rgb(255, 237, 237);
     max-width: 1200px;
-    height: 8rem;
+    height: 8vh;
     margin: auto;
     display: flex;
     justify-content: space-between;
+    padding: 0 5rem;
     align-items: center;
 }
 
 .menu-logo {
     height: 80%;
+    width: 15rem;
 }
 
 .menu-logo img{
@@ -49,7 +47,7 @@ header{
 }
 
 .logo-texto {
-  width: 500px;
+  width: 300px;
   height: 50px;
   border-radius: 50% 50% 0 0;
   background-color: white;
@@ -59,7 +57,6 @@ header{
 .logo-texto h1{
     font-family: 'Pacifico', cursive;
     font-size: 3rem;
-    letter-spacing: 0.1rem;
     text-align: center;
     color: #f3759f;
 }
@@ -67,9 +64,10 @@ header{
 .redes-sociais ul{
     display: flex;
     align-items: center;
+    justify-content: end;
     list-style-type:none;
-    justify-content: space-around;
-    width: 14rem;
+    width: 15rem;
+    gap: 1rem;
 }
 
 .instagram-icon, .whatsapp-icon, .linkedin-icon{
@@ -95,17 +93,19 @@ header{
 
 .main-menu-categorias{
     background-color: #E1306C;
-    display: flex;
-    justify-content: center;
+    height: 8rem;
 }
 
 .main-menu-categorias > ul {
     display: flex;
-    height: 8rem;
-    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    height: 100%;
+    max-width: 120rem;
+    margin: auto;
     list-style-type: none;
+    gap: 20rem;
+    
 }
 
 .main-menu-categorias > ul > li{
@@ -134,43 +134,42 @@ header{
 
 /* parte inicial da página/home */
 
-.home {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../img/background/background01.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.home{
     position: relative;
-    z-index: 0;
 }
 
 .main-home{
-    height: fit-content;
     display: flex;
-    max-width: 120rem;
-    margin: auto ;
+    width: 100vw;
+    height: 100vh;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 5rem;
+    position: relative;
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    padding: 0 20rem;
+    background:url(../img/background/background01.svg) no-repeat center / cover;
     
 }
 
-.home-sobre {
-    position: relative;
+.home-sobre{
+    width: 50%;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.home-sobre > h3 {
+
+.home-sobre  h3 {
     font-size: 2em;
     font-family: 'Pacifico', cursive;
     color: rgba(255, 20, 147, 0.9);
 }
 
-.home-sobre > h1 {
+.home-sobre  h1 {
     font-size: 2em;
     font-family: 'Courier New', Courier, monospace;
     font-size: 2.7em;
@@ -178,7 +177,7 @@ header{
     
 }
 
-.home-sobre > button{
+.home-sobre  button{
     padding: 2rem 7rem;
     background-color:rgba(255, 20, 147, 0.6) ;
     color: white;
@@ -188,14 +187,16 @@ header{
     margin-top: 8rem;
     cursor: pointer;
     box-shadow: 0 0 1rem 0.4rem white;
+    text-align: center;
 }
 .home-image-sobre{
-    width: 50rem;
+    width: 50%;
     height: 50rem;
-    position: relative;
+    text-align: center;
 }
 .home-image-sobre img{
     height: 100%;
+    width: 70%;
 }
 
 /* parte das promoçoes da página */
