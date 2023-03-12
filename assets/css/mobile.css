@@ -74,9 +74,7 @@
         gap: 10rem;
     }
 
-    .logo-texto{
-        display: none;
-    }
+    
 
     .redes-sociais{
         display: none;
@@ -91,10 +89,7 @@
         transform: translateX(0);
     }
 
-    .home-image-sobre{
-        width: 100%;
 
-    }
 
     .main-promocoes{
         max-width: 60rem;

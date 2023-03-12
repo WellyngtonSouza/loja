@@ -18,7 +18,7 @@ let produto = [
             ["avonM", "avonM", "avonM", "avonM"],
             ["avonK", "avonK", "avonK", "avonK"],
         ],
-        catalogo : "",
+        catalogo: "",
 
     },
     {
@@ -38,7 +38,7 @@ let produto = [
             ["naturaM", "naturaM", "naturaM", "naturaM"],
             ["naturaK", "naturaK", "naturaK", "naturaK"],
         ],
-        catalogo : "",
+        catalogo: "",
     },
     {
         marca: "boticario",
@@ -57,7 +57,7 @@ let produto = [
             ["boticarioM", "boticarioM", "boticarioM", "boticarioM"],
             ["boticarioK", "boticarioK", "boticarioK", "boticarioK"],
         ],
-        catalogo : "",
+        catalogo: "",
     },
     {
         marca: "romance",
@@ -76,20 +76,18 @@ let produto = [
             ["romanceCL", "romanceCL", "romanceCL", "romanceCL"],
             ["romanceCLG", "romanceCLG", "romanceCLG", "romanceCLG"],
         ],
-        catalogo : "",
+        catalogo: "",
     },
 ]
 
-let selected = document.querySelector(".main-promocoes-selection select")
+let selected = document.querySelectorAll(".main-promocoes-selection > button")
+
 
 let categorias_produtos = document.querySelectorAll(".promocoes-header-produtos > ul > button")
 let sumario_produtos = document.querySelectorAll(".promocoes-cards-produtos > ul > li > div > h2 > span")
 let fotos = document.querySelectorAll(".promocoes-cards-produtos > ul > li > img")
 let nome_produto = document.querySelectorAll(".promocoes-cards-produtos > ul > li > div > h2 >  span")
 let angleOn = document.querySelector(".angleOn")
-selected.addEventListener("click", () => angleOn.classList.toggle("on"))
-selected.addEventListener("blur", () => angleOn.classList.contains("on") ? angleOn.classList.toggle("on") : null)
-
 
 let containerScroll = document.querySelector(".promocoes-cards-produtos ul")
 let buttonRight = document.querySelector(".an-1")
@@ -99,36 +97,52 @@ buttonRight.addEventListener("click", () => containerScroll.scrollLeft = contain
 buttonLeft.addEventListener("click", () => containerScroll.scrollLeft = -(containerScroll.scrollWidth / 2))
 
 
-selected.addEventListener("change", function (element) {
+selected.forEach((element) => {
+    element.addEventListener("click", function () {
 
-    let option = element.target.value
-    let indexProduto = produto.findIndex(el => el.marca == option)   // sempre pego o index atual da  marca selecionada
+        selected.forEach((el) => el.classList.remove("ativos"))
+        this.classList.toggle("ativos")
+        let option = this.value
+        let indexProduto = produto.findIndex((el => el.marca == option))
 
-    for (let dis = 0; dis < categorias_produtos.length; dis++) {
-        categorias_produtos[dis].innerHTML = produto[indexProduto].sub_categorias[dis] // esse bloco muda os valores e o conteúdo dependendo da marca
-        categorias_produtos[dis].value = produto[indexProduto].sub_categorias[dis]
-    }
-    let ind = Array.from(categorias_produtos).findIndex(el => el.classList.contains("ativos")) // aqui irá pegar o index da categoria marcada como ativa
-    let indValue = categorias_produtos[ind].value                                            // aqui pego o valor da categoria selecionada pelo index
+        for (let dis = 0; dis < categorias_produtos.length; dis++) {
+            categorias_produtos[dis].innerHTML = produto[indexProduto].sub_categorias[dis] // esse bloco muda os valores e o conteúdo dependendo da marca
+            categorias_produtos[dis].value = produto[indexProduto].sub_categorias[dis]
+        }
 
-    for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
-        // eu coloquei os nomes das pastas de acordo os valores pra eu manipular por aqui, pois os nomes das imagens estaoria no objeto produto assim consigo controlar com facilidade
-        fotos[dis].src = `./assets/img/listFotos/${option}/${indValue}/${produto[indexProduto].imagens[ind][dis]}` // aqui eu distribuo as imagens dependendo onde a categoria estiver selecionada pelos index que definir acima
-        nome_produto[dis].innerHTML = produto[indexProduto].nome[ind][dis]
-    }
+        let ind = Array.from(categorias_produtos).findIndex(el => el.classList.contains("ativos")) // aqui irá pegar o index da categoria marcada como ativa
+        let indValue = categorias_produtos[ind].value
+
+        for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
+            // eu coloquei os nomes das pastas de acordo os valores pra eu manipular por aqui, pois os nomes das imagens estaoria no objeto produto assim consigo controlar com facilidade
+            fotos[dis].src = `./assets/img/listFotos/${option}/${indValue}/${produto[indexProduto].imagens[ind][dis]}` // aqui eu distribuo as imagens dependendo onde a categoria estiver selecionada pelos index que definir acima
+            // nome_produto[dis].innerHTML = produto[indexProduto].nome[ind][dis]
+        }
+
+    })
 })
+
 
 categorias_produtos.forEach((element, index) => {
     element.addEventListener("click", function () {
         categorias_produtos.forEach(elements => elements.classList.remove("ativos")) // aqui removo todos os botões ativos, pra sempre ter um ativo
 
         this.classList.add("ativos") //e aqui adiciono apenas um
-        let option = selected.value
+        let option;
+        selected.forEach((el) => {
+            if (el.classList.contains("ativos")) {
+                option = el.value
+            }
+        })
+
+        console.log(option)
         let indexProduto = produto.findIndex(el => el.marca == option)
         if (produto[indexProduto].marca == option) {                                // aqui eu irei pegar as marca e categoria atual e adicionar a imagen de acordo com os index de marca e categoria
             for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
                 fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${produto[indexProduto].imagens[index][dis]}`
-                nome_produto[dis].innerHTML = produto[indexProduto].nome[index][dis]
+                console.log(nome_produto)
+
+                // nome_produto[dis].innerHTML = produto[indexProduto].nome[index][dis]
             }
         }
     })
