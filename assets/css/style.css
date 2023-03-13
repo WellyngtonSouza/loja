@@ -14,6 +14,8 @@
     user-select: none;
 } 
 
+
+
 body{
     font-size: 1.5rem;
 }
@@ -215,17 +217,18 @@ header{
     flex-direction: column;
     justify-content: center;
     border-radius: 5rem;
+    position: relative;
 }
 
 .angle{
     width: 5rem;
     height: 5rem;
-    position: absolute;
     border-radius: 50%;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.2);
     transition: background-color .5s ease;
-    display: none;
+    position: absolute;
+    border: none;
 }
 
 .angle:hover{
@@ -234,11 +237,11 @@ header{
 }
 
 .an-1{
-    right: -6rem;
+    right: -5rem;
 }
 
 .an-2{
-    left: -6rem;
+    left: -5rem;
 }
 
 .an-2 i{
@@ -415,8 +418,8 @@ header{
 .produtos-header{
     height: 10%;
     width: 50rem;
-    margin:0 auto 15rem auto;
-    padding: 5rem;
+    margin:20rem auto 10rem auto;
+    padding: 2rem;
     
 }
 
@@ -438,22 +441,31 @@ header{
 
 .main-produtos-categorias{
     height: fit-content;
+
 }
-.produtos-categorias{
-    
-}
+
 .produtos-categorias > h1 {
+    width: fit-content;
     font-size: 4rem;
-    padding: 3rem;
+    padding: 2rem;
     border: 0.3rem solid #000000;
     border-radius: 1rem;
     font-family: 'Heebo', sans-serif;
+    margin: auto;
 }
 
 .produtos-imagens-cards{
-    height: fit-content;
+    width: 80rem;
+    margin: auto;
+    
+}
+
+.main-produtos-cards{
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
+    gap: 0.5rem;
+    margin: auto;
+    width: 100%;
 }
 
 .produtos-cards{
@@ -463,7 +475,7 @@ header{
 }
 
 .produtos-img{
-    width: 20rem;
+    width: 100%;
     height: 20rem;
     margin: 5rem 0 0 0 ;
     border-radius: 1rem;

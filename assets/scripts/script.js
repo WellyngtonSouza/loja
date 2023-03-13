@@ -140,7 +140,6 @@ categorias_produtos.forEach((element, index) => {
         if (produto[indexProduto].marca == option) {                                // aqui eu irei pegar as marca e categoria atual e adicionar a imagen de acordo com os index de marca e categoria
             for (let dis = 0; dis < produto[indexProduto].imagens.length; dis++) {
                 fotos[dis].src = `./assets/img/listFotos/${option}/${this.value}/${produto[indexProduto].imagens[index][dis]}`
-                console.log(nome_produto)
 
                 // nome_produto[dis].innerHTML = produto[indexProduto].nome[index][dis]
             }
