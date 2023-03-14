@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 1250px){
     .main-promocoes{
-        max-width: 90rem;
+        max-width: 80rem;
     }
 }
 
@@ -100,10 +100,9 @@
         display: none;
     }
 
-    .produtos-imagens-cards{
-        width: 60rem;
+    .produtos-cards{
+        width: 30rem;
     }
-
 
 }
 
@@ -158,6 +157,7 @@
         width: 50rem;
         font-size: 3rem;
     }
+
 
 }
 
@@ -218,10 +218,5 @@
         width: 35rem;
         font-size: 3rem;
     }
-
-    .produtos-imagens-cards{
-        width: 40rem;
-    }
-
 }
 

@@ -453,10 +453,9 @@ header{
 }
 
 .produtos-imagens-cards{
-    width: 100rem;
     display: flex;
     gap: 5rem;
-    margin: auto;
+    margin:auto;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -489,8 +488,10 @@ header{
 .btn-link-produtos{
     list-style: none;
     text-decoration: none;
+    width: fit-content;
     outline: none;
     background-color: rgb(255, 20, 147);
+    padding: 1rem 1rem;
     border-radius: 1rem;
     color: #ffffff;
     font-size: 2rem;
