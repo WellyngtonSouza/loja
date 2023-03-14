@@ -14,8 +14,6 @@
     user-select: none;
 } 
 
-
-
 body{
     font-size: 1.5rem;
 }
@@ -196,7 +194,7 @@ header{
 }
 .home-image-sobre img{
     height: 100%;
-    width: 100%;
+    width: 90%;
  
 }
 
@@ -309,7 +307,7 @@ header{
 
 .promocoes-header-produtos > ul > button{
     width: 10.2rem;
-    height: 3.2rem;
+    height: 4.2rem;
     text-align: center;
     line-height: 3.2rem;
     background-color: rgba(255, 255, 255, 0.6);
@@ -412,6 +410,7 @@ header{
 .main-produtos{
     max-width: 1200px ;
     margin: auto;
+    height: auto;
 }
 
 
@@ -440,7 +439,6 @@ header{
 }
 
 .main-produtos-categorias{
-    height: fit-content;
 
 }
 
@@ -451,33 +449,28 @@ header{
     border: 0.3rem solid #000000;
     border-radius: 1rem;
     font-family: 'Heebo', sans-serif;
-    margin: auto;
+    margin:5rem auto;
 }
 
 .produtos-imagens-cards{
-    width: 80rem;
-    margin: auto;
-    
-}
-
-.main-produtos-cards{
+    width: 100rem;
     display: flex;
-    justify-content:center;
-    gap: 0.5rem;
+    gap: 5rem;
     margin: auto;
-    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .produtos-cards{
-    height: 40rem;
-    width: 40rem;
+    height: 100%;
+    width: 20rem;
     text-align: center;
+    padding: 2rem;
 }
 
 .produtos-img{
     width: 100%;
     height: 20rem;
-    margin: 5rem 0 0 0 ;
     border-radius: 1rem;
     transition: transform 1s ease;
 }

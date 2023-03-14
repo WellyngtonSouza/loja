@@ -100,6 +100,10 @@
         display: none;
     }
 
+    .produtos-imagens-cards{
+        width: 60rem;
+    }
+
 
 }
 
@@ -149,26 +153,12 @@
         font-size: 1.3rem;
     }
 
-    .produtos-imagens-cards{
-
-        width: 60rem;
-
-    }
 
     .produtos-categorias > h1{
         width: 50rem;
         font-size: 3rem;
     }
 
-    .btn-link-produtos{
-        
-        
-      
-        padding: 1rem 1rem;
-        border-radius: 1rem;
-        color: #ffffff;
-        font-size: 1.6rem;
-    }
 }
 
 @media screen and (max-width : 600px){
@@ -212,8 +202,6 @@
         font-size: 1.2rem;
     }
 
-    
-
     .produtos-header{
         width: 40rem;
     }
@@ -228,26 +216,12 @@
 
     .produtos-categorias > h1{
         width: 35rem;
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .produtos-imagens-cards{
-
         width: 40rem;
-
     }
 
-    .produtos-img{
-        height: 15rem;
-    }
-    
-
-    .btn-link-produtos{
-        padding: 1rem 0.5rem;
-        border-radius: 1rem;
-        color: #ffffff;
-        font-size: 1.2rem;
-    }
-    
 }
 
