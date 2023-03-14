@@ -466,6 +466,7 @@ header{
     width: 20rem;
     text-align: center;
     padding: 2rem;
+    background-color: #25D366;
 }
 
 .produtos-img{
@@ -490,7 +491,6 @@ header{
     text-decoration: none;
     outline: none;
     background-color: rgb(255, 20, 147);
-    padding: 1rem 1rem;
     border-radius: 1rem;
     color: #ffffff;
     font-size: 2rem;
